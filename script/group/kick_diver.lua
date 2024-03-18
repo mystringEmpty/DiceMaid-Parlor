@@ -1,4 +1,5 @@
-local function kick_diver(gid)
+local function kick_diver(eve)
+    local gid = eve.gid
     local list = loadLua("group.diver4kick")(gid)
     if #list==0 then log("群"..gid.."获取潜水列表为空",1) end
     local ary_id = {}
@@ -6,7 +7,7 @@ local function kick_diver(gid)
     local now = os.time()
     for i,data in ipairs(list)do
         table.insert(ary_id,data.id)
-        table.insert(ary_id,"[CQ:at,id="..data.id.."] "..(now-data.val)/86400 .."天")
+        table.insert(ary_at_days,"[CQ:at,id="..data.id.."] "..(now-data.val)/86400 .."天")
     end
 --res = table.concat(ary_id,"\n")
     sendMsg({
@@ -18,5 +19,6 @@ local function kick_diver(gid)
         fromMsg = ".group "..string.format("%d",gid).." kick "..table.concat(ary_id,"\n"),
         uid = getDiceQQ()
     })
+    eve.cntDiver = #ary_id
 end
 return kick_diver

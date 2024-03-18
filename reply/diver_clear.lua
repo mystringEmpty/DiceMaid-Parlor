@@ -5,9 +5,7 @@ msg_reply.group_diver_clear = {
         user_var = { trust = { more = 4 } }
     },
     echo = function()
-        local gid = msg.gid
-        loadLua("group.kick_diver")(gid)
-        msg.cntDiver = #ary_id
+        loadLua("group.kick_diver")(msg)
         return "{group_diver_clear}"
     end
 }
