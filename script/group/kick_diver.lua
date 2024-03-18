@@ -7,7 +7,7 @@ local function kick_diver(eve)
     local now = os.time()
     for i,data in ipairs(list)do
         table.insert(ary_id,data.id)
-        table.insert(ary_at_days,"[CQ:at,id="..data.id.."] "..(now-data.val)/86400 .."天")
+        table.insert(ary_at_days,"[CQ:at,id="..data.id.."] "..string.format("%.0f",(now-data.val)/86400) .."天")
     end
 --res = table.concat(ary_id,"\n")
     sendMsg({

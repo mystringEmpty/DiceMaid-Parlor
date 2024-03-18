@@ -1,9 +1,10 @@
 {
     "mod":"色子女仆·客厅骰娘",
     "author":"安研色Shiki",
-    "ver":"0.1.1(2)",
+    "ver":"0.1.2(3)",
     "dice_build":618,
     "brief":"作为群管理时，支持执行清理群内潜水等操作",
+    "repo": "https://mirror.ghproxy.com/https://github.com/mystringEmpty/DiceMaid-Parlor.git",
     "comment":"",
     "helpdoc":{
         "清理潜水":"按最后发言时间清理潜水群员，默认清理到50空位"
